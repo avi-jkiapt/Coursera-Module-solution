@@ -15,7 +15,7 @@ $scope.messput= function(){
 	var inValue= $scope.value;
 	var mess="";
 
-  if(inValue==0)//empty
+  if(inValue===0)//empty
 {
   mess="Please enter data first";
 }
@@ -34,8 +34,14 @@ return mess;
 $scope.TooCheck =function(){
   
 var nameValue =$scope.name;
-var arr=nameValue.split(",");
+if(nameValue===''||nameValue===undefined)
+	$scope.value=0;
+else
+{
+	var arr=nameValue.split(",");
 $scope.value=arr.length;
+}
+
 
 };
 
